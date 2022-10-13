@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+
+	<!-- Master Parent POM -->
+	<parent>
+		<groupId>com.ibm.dba.dm.demos</groupId>
+		<artifactId>ibm-techfest-2022</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+	</parent>
+
+	<!-- Module POM -->
+	<groupId>com.ibm.dba.dm.demos</groupId>
+	<artifactId>ibm-techfest-2022-drl</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<!-- Project Properties -->
+	<properties>
+	</properties>
+
+	<!-- Dependency Management -->
+	<dependencyManagement>
+	</dependencyManagement>
+
+	<!-- Dependencies -->
+	<dependencies>
+		  <dependency>
+			<groupId>org.kie.kogito</groupId>
+			<artifactId>kogito-quarkus-rules</artifactId>
+		  </dependency>
+	  </dependencies>
+</project>

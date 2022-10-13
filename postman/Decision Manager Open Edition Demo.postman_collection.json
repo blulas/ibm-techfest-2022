@@ -1,0 +1,133 @@
+{
+	"info": {
+		"_postman_id": "d47c4b00-beda-4cb8-9e26-315facd00fcd",
+		"name": "Decision Manager Open Edition Demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23092969"
+	},
+	"item": [
+		{
+			"name": "[DMN] Determine Loan Eligibility",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"Client\": {\n        \"age\": 43,\n        \"salary\": 1950,\n        \"exiting payments\": 100\n    },\n\n    \"Loan\": {\n        \"duration\": 15,\n        \"installment\": 180\n    },\n\n    \"SupremeDirector\": \"Yes\",\n    \"Bribe\": 1000\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/LoanEligibility",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"LoanEligibility"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[DRL] Find Approved Applications",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"maxAmount\": 5000,\n    \"loanApplications\": [\n        {\n            \"id\": \"ABC10001\",\n            \"amount\": 2000,\n            \"deposit\": 100,\n            \"applicant\": {\n                \"age\": 45,\n                \"name\": \"John\"\n            }\n        },\n        {\n            \"id\": \"ABC10002\",\n            \"amount\": 5000,\n            \"deposit\": 100,\n            \"applicant\": {\n                \"age\": 25,\n                \"name\": \"Paul\"\n            }\n        },\n        {\n            \"id\": \"ABC10015\",\n            \"amount\": 1000,\n            \"deposit\": 100,\n            \"applicant\": {\n                \"age\": 12,\n                \"name\": \"George\"\n            }\n        }\n    ]\n}\n"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/find-approved",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"find-approved"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[DRL] Find Unapproved Applications (ID & Amount Only)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"maxAmount\": 5000,\n    \"loanApplications\": [\n        {\n            \"id\": \"ABC10001\",\n            \"amount\": 2000,\n            \"deposit\": 100,\n            \"applicant\": {\n                \"age\": 45,\n                \"name\": \"John\"\n            }\n        },\n        {\n            \"id\": \"ABC10002\",\n            \"amount\": 5000,\n            \"deposit\": 100,\n            \"applicant\": {\n                \"age\": 25,\n                \"name\": \"Paul\"\n            }\n        },\n        {\n            \"id\": \"ABC10015\",\n            \"amount\": 1000,\n            \"deposit\": 100,\n            \"applicant\": {\n                \"age\": 12,\n                \"name\": \"George\"\n            }\n        }\n    ]\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/find-not-approved-id-and-amount",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"find-not-approved-id-and-amount"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[DRL] Find All Applications (Amount Only)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"maxAmount\": 5000,\n    \"loanApplications\": [\n        {\n            \"id\": \"ABC10001\",\n            \"amount\": 2000,\n            \"deposit\": 100,\n            \"applicant\": {\n                \"age\": 45,\n                \"name\": \"John\"\n            }\n        },\n        {\n            \"id\": \"ABC10002\",\n            \"amount\": 5000,\n            \"deposit\": 100,\n            \"applicant\": {\n                \"age\": 25,\n                \"name\": \"Paul\"\n            }\n        },\n        {\n            \"id\": \"ABC10015\",\n            \"amount\": 1000,\n            \"deposit\": 100,\n            \"applicant\": {\n                \"age\": 12,\n                \"name\": \"George\"\n            }\n        }\n    ]\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/find-not-approved-id-and-amount",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"find-not-approved-id-and-amount"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
